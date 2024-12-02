@@ -62,3 +62,9 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgements
 
 This documentation is based on various learning resources, including [Python for Everybody](https://www.py4e.com), a great course by Dr. Chuck.
+
+## Status
+
+This project is still under development. Additional information and features will be added soon. Stay tuned!
+
+
