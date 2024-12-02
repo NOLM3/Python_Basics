@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical Documentation: Python Basics</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav id="navbar">
+    <header>Python Documentation</header>
+    <ul>
+      <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+      <li><a class="nav-link" href="#What_You_Should_Already_Know">What You Should Already Know</a></li>
+      <li><a class="nav-link" href="#Strings_and_Print_Function">Strings and Print Function</a></li>
+      <li><a class="nav-link" href="#Reserved_Words">Reserved Words</a></li>
+      <li><a class="nav-link" href="#Variables_and_Rules">Variables and Rules</a></li>
+      <li><a class="nav-link" href="#Numeric_Expressions">Numeric Expressions</a></li>
+      <li><a class="nav-link" href="#Order_of_Evaluation">Order of Evaluation</a></li>
+      <li><a class="nav-link" href="#String_to_Int_Float_Conversion">String to Int/Float Conversion</a></li>
+      <li><a class="nav-link" href="#Conversion_Operators">Conversion Operators</a></li>
+      <li><a class="nav-link" href="#Indentation_Deindentation">Indentation/Deindentation</a></li>
+      <li><a class="nav-link" href="#Control_Flow">Control Flow</a></li>
+      <li><a class="nav-link" href="#Reference">Reference</a></li>
+    </ul>
+  </nav>
+  
+  <main id="main-doc">
+    <section class="main-section" id="Introduction">
+      <header>Introduction</header>
+      <p>Python is a high-level, general-purpose programming language known for its simplicity and readability. It was created by Guido van Rossum and first released in 1991. Python is designed to be easy to understand and use, making it an ideal choice for beginners and experienced developers alike.</p>
+  <p>One of Python’s core philosophies is its emphasis on code readability. This is reflected in its use of indentation to define code blocks, instead of curly braces like many other languages. This design helps make Python code more concise and intuitive to read, which contributes to its popularity.</p>
+  <p>Python is versatile and widely used in a variety of fields such as web development, data science, automation, artificial intelligence, and scientific computing. It has a large community, which means there is an extensive library of tools and frameworks to help with almost any kind of task. Some well-known Python frameworks include Django for web development, Pandas for data analysis, and TensorFlow for machine learning.</p>
+  <p>Some key features of Python include:</p>
+  <ul>
+    <li><strong>Simple and Readable Syntax:</strong> Python's syntax is designed to be straightforward and readable, making it a great choice for beginners.</li>
+    <li><strong>Dynamic Typing:</strong> Python uses dynamic typing, meaning variables do not need to be explicitly declared with a type. The type is inferred based on the assigned value.</li>
+    <li><strong>Interpreted Language:</strong> Python code is executed by an interpreter, which means it runs line by line and doesn't require a compilation step. This allows for easier debugging and rapid development.</li>
+    <li><strong>Cross-Platform Compatibility:</strong> Python is available on multiple platforms, including Windows, macOS, and Linux, making it highly portable.</li>
+    <li><strong>Extensive Libraries:</strong> Python has a rich ecosystem of libraries and frameworks, from web development to data science and machine learning, which greatly enhance its versatility.</li>
+  </ul>
+  <p>In the following sections, key concepts such as data types, variables, control flow, and functions will be introduced to provide a solid foundation for Python programming.</p>
+</section>
+    <section class="main-section" id="What_You_Should_Already_Know">
+      <header>What You Should Already Know</header>
+      <p>To get the most out of this documentation, it's helpful to be familiar with a few basic concepts. While this guide is designed to be beginner-friendly, prior knowledge of certain topics can help you understand the concepts more easily and apply them efficiently.</p>
+  <p>The following skills will provide a solid foundation before diving into Python programming:</p>
+  <ul>
+    <li><strong>Basic Computer Knowledge:</strong> Comfort with using a computer and navigating file systems is important. You should be able to manage files and folders, install software, and interact with the operating system's terminal (or command line).</li>
+    <li><strong>Using Visual Studio Code:</strong> Familiarity with setting up and using VS Code as a development environment. You'll need to know how to open files, write code, save documents, and run your Python scripts. You should also be comfortable with installing extensions and managing files within the VS Code workspace.</li>
+    <li><strong>Running Python Files:</strong> Knowing how to run Python files is essential. This includes running Python scripts in an IDE (like VS Code) or via the terminal/command line. If you're unfamiliar with running Python code, it may be beneficial to review the process for installing Python and executing scripts from the terminal.</li>
+    <li><strong>Basic Understanding of Files and Folders:</strong> Organizing project files and understanding file paths is crucial for programming. Being able to locate, manage, and edit different types of files (like `.py` and `.txt` files) will make your workflow smoother.</li>
+    <li><strong>Problem-Solving Skills:</strong> Basic problem-solving skills will help you understand programming logic. You'll encounter issues while coding, and having the ability to break problems into smaller, manageable pieces will make debugging and writing code easier.</li>
+    <li><strong>Concept of Variables and Data Types:</strong> Understanding variables and the concept of data types (like numbers, strings, and lists) will help you write effective Python code. It's also useful to know how to assign values to variables and how different data types are handled in Python.</li>
+    <li><strong>Basic Understanding of Programming Concepts:</strong> Having a general understanding of what programming is and how it works can be helpful. Concepts like loops, conditionals, and functions are common in many programming languages, and familiarizing yourself with these concepts will make learning Python easier.</li>
+  </ul>
+  <p>If you're not familiar with these concepts, don't worry! You can still follow along with the documentation. However, it's recommended to explore introductory resources on these topics first. There are many great tutorials and resources available to help you get up to speed before continuing with this guide.</p>
+      </ul>
+      <p>If you're not familiar with these concepts, consider exploring introductory resources before continuing with this guide.</p>
+    </section>
+    <section class="main-section" id="Strings_and_Print_Function">
+      <header>Strings and the print() Function</header>
+    
+      <p>In Python, **strings** are sequences of characters enclosed in single (' ') or double (" ") quotes. Python allows you to use both single and double quotes for creating strings, which makes it easier to include quotes inside the string without the need for escape characters.</p>
+    
+      <p><strong>Examples of strings:</strong></p>
+      <ul>
+        <li><code>'Hello World'</code></li>
+        <li><code>"Python is awesome"</code></li>
+      </ul>
+    
+      <p>You can also use double quotes inside strings defined by single quotes, and vice versa:</p>
+      <ul>
+        <li><code>'This is a "string" example'</code></li>
+        <li><code>"She said 'Hello' and left"</code></li>
+      </ul>
+    
+      <p>For longer strings or strings that need line breaks, you can use **triple quotes** (single or double). This allows you to create multi-line strings without needing to use the newline escape character (`\n`).</p>
+      <ul>
+        <li><code>'''This is a string
+    spanning multiple lines'''</code></li>
+        <li><code>"""This also works
+    and can include multiple line breaks."""</code></li>
+      </ul>
+    
+      <p><strong>String Concatenation:</strong> You can combine multiple strings using the concatenation operator <code>+</code>. Additionally, strings can be repeated using the repetition operator <code>*</code>.</p>
+      <ul>
+        <li><code>greeting = 'Hello ' + 'World'  # Result: 'Hello World'</code></li>
+        <li><code>repeat = 'Python ' * 3  # Result: 'Python Python Python '</code></li>
+      </ul>
+    
+      <p><strong>print() Function:</strong> The <code>print()</code> function is one of the most commonly used functions in Python. It is used to display information to the console or standard output. You can print text, variables, results of operations, and more.</p>
+      <p>The <code>print()</code> function can accept multiple arguments separated by commas, and Python will insert a space between them when printing.</p>
+      <ul>
+        <li><code>print('Hello', 'World')  # Result: 'Hello World'</code></li>
+        <li><code>print('The result of the operation is', 10 + 5)  # Result: 'The result of the operation is 15'</code></li>
+      </ul>
+    
+      <p>Additionally, you can control how the text is printed, such as the separator between arguments, by using the <code>sep</code> parameter:</p>
+      <ul>
+        <li><code>print('Python', 'is', 'awesome', sep='-')  # Result: 'Python-is-awesome'</code></li>
+      </ul>
+    
+      <p>The <code>print()</code> function also allows you to change the character that ends the line. By default, it adds a newline character at the end, but if you don't want that, you can modify it using the <code>end</code> parameter:</p>
+      <ul>
+        <li><code>print('Hello', end=' ')  # Result: 'Hello ' without a newline</code></li>
+        <li><code>print('World', end='!\n')  # Result: 'World!' with an exclamation mark at the end</code></li>
+      </ul>
+    
+      <p><strong>F-strings:</strong> Starting from Python 3.6, f-strings allow you to embed expressions inside string literals in a very readable and efficient way. Using the syntax <code>f'...' </code>, you can directly insert values within curly braces <code>{}</code>.</p>
+      <ul>
+        <li><code>name = 'John'</code></li>
+        <li><code>print(f'Hello, {name}!')  # Result: 'Hello, John!'</code></li>
+      </ul>
+    
+      <p>F-strings also allow you to perform calculations or invoke functions inside the curly braces:</p>
+      <ul>
+        <li><code>age = 25</code></li>
+        <li><code>print(f'In 5 years, you will be {age + 5} years old.')  # Result: 'In 5 years, you will be 30 years old.'</code></li>
+      </ul>
+    
+      <p><strong>Escaping Characters:</strong> If you need to include special characters inside strings, such as quotes or line breaks, you can use the escape character (<code>\</code>) to prevent them from being interpreted as string delimiters.</p>
+      <ul>
+        <li><code>print('He said: \"Python is awesome\"')</code></li>
+        <li><code>print('First line\nSecond line')</code></li>
+      </ul>
+    
+    </section>
+    
+    <section class="main-section" id="Reserved_Words">
+      <header>Reserved Words</header>
+    
+      <p>In Python, **reserved words** (also called keywords) are words that have a specific meaning in the language's syntax. These words are predefined by Python and cannot be used as identifiers (e.g., variable names, function names, class names). Each reserved word serves a particular purpose in the language, and they help define the structure of the Python code.</p>
+    
+      <p>Reserved words are part of the core Python syntax and are used to represent language constructs such as control flow (e.g., <code>if</code>, <code>else</code>), data types (e.g., <code>int</code>, <code>str</code>), and other important language features like loops, exception handling, and function definitions.</p>
+    
+      <p><strong>For example:</strong> The word <code>if</code> is used to define conditional statements, while <code>def</code> is used to define functions.</p>
+    
+      <p>Reserved words cannot be used for naming variables, functions, or other identifiers in your Python programs. Attempting to use a reserved word as an identifier will result in a syntax error. For instance, trying to assign a value to a variable named <code>def</code> would raise an error:</p>
+    
+      <ul>
+        <li><code>def = 5  # This will raise a SyntaxError</code></li>
+      </ul>
+    
+      <p>There are currently 35 reserved words in Python 3.x. Some of the most common reserved words include:</p>
+      <ul>
+        <li><code>False</code> - Represents a boolean value, false.</li>
+        <li><code>None</code> - Represents a null value or "no value here".</li>
+        <li><code>True</code> - Represents a boolean value, true.</li>
+        <li><code>and</code> - A logical operator used to combine conditional statements.</li>
+        <li><code>as</code> - Used to create an alias while importing modules or packages.</li>
+        <li><code>class</code> - Used to define a class.</li>
+        <li><code>def</code> - Used to define a function.</li>
+        <li><code>if</code> - Used to start a conditional block.</li>
+        <li><code>import</code> - Used to import a module.</li>
+        <li><code>try</code> - Used to start a block of code for exception handling.</li>
+      </ul>
+    
+      <p>These reserved words are case-sensitive, which means that <code>True</code> and <code>true</code> are different. In Python, <code>True</code> refers to the boolean value, while <code>true</code> would be treated as an identifier and could lead to errors if used incorrectly.</p>
+    
+      <p>For a complete list of reserved words in Python, you can use the <code>keyword</code> module, which provides a programmatic way to access the full list:</p>
+      <ul>
+        <li><code>import keyword</code></li>
+        <li><code>print(keyword.kwlist)</code>  <!-- This will print the full list of reserved words --></li>
+      </ul>
+    
+      <p>Understanding reserved words is essential when writing Python programs to avoid naming conflicts and ensure that your code is syntactically correct.</p>
+    </section>
+    
+
+
+    <section class="main-section" id="Variables_and_Rules">
+      <header>Variables and Rules</header>
+      
+      <p>In Python, variables are used to store data that can be accessed and manipulated throughout your program. A variable is essentially a name that points to a value, and it is created by assigning a value to a name using the assignment operator <code>=</code>.</p>
+      
+      <p>Python is a dynamically typed language, meaning you don’t need to declare the data type of a variable when you create it. Python will automatically infer the type based on the value assigned to it. For example:</p>
+      
+      <ul>
+        <li><code>name = "Alice"</code>  <!-- The variable <strong>name</strong> holds a string value --></li>
+        <li><code>age = 25</code>        <!-- The variable <strong>age</strong> holds an integer value --></li>
+        <li><code>height = 5.8</code>     <!-- The variable <strong>height</strong> holds a float value --></li>
+      </ul>
+    
+      <p>In Python, there are certain rules and conventions you must follow when naming variables:</p>
+    
+      <ul>
+        <li><strong>Variable names must start with a letter (a-z, A-Z) or an underscore (_).</strong> They cannot start with a number.</li>
+        <li><strong>After the first character, variable names can include letters, numbers, and underscores.</strong></li>
+        <li><strong>Variable names are case-sensitive.</strong> For example, <code>Age</code> and <code>age</code> are considered two different variables.</li>
+        <li><strong>Variable names cannot be the same as Python reserved words (keywords).</strong></li>
+      </ul>
+    
+      <h3>Examples of Correct Syntax:</h3>
+    
+      <ul>
+        <li><code>my_var = 10</code>   <!-- Correct, variable name is valid and starts with a letter.</li>
+        <li><code>_private = 42</code>  <!-- Correct, variable name starts with an underscore, which is allowed.</li>
+        <li><code>age = 25</code>        <!-- Correct, variable name uses lowercase letters.</li>
+        <li><code>my_variable_123 = "Hello"</code> <!-- Correct, variable name contains letters, numbers, and underscores.</li>
+      </ul>
+    
+      <h3>Examples of Incorrect Syntax:</h3>
+    
+      <ul>
+        <li><code>123abc = 5</code>  <!-- Incorrect, variable names cannot start with a number.</li>
+        <li><code>my-variable = 10</code>  <!-- Incorrect, hyphens are not allowed in variable names.</li>
+        <li><code>True = 5</code>    <!-- Incorrect, <strong>True</strong> is a reserved word and cannot be used as a variable name.</li>
+        <li><code>float = 3.14</code>  <!-- Incorrect, <strong>float</strong> is a reserved word in Python.</li>
+      </ul>
+    
+      <p>It is also recommended to follow certain naming conventions to make your code more readable:</p>
+      
+      <ul>
+        <li><strong>Use descriptive names:</strong> Names like <code>age</code>, <code>total_price</code>, or <code>is_active</code> are more descriptive than <code>x</code> or <code>temp</code>.</li>
+        <li><strong>Use snake_case for variable names:</strong> In Python, it’s common to use underscores to separate words in variable names. For example: <code>total_amount</code>, <code>user_name</code>.</li>
+        <li><strong>Avoid using single-letter variable names, except for counters in loops:</strong> While it's acceptable to use single-letter names like <code>i</code> in for loops, it's generally better to use more descriptive names for other variables.</li>
+      </ul>
+    
+      <p>Remember that Python follows a dynamic typing system, meaning you can change the type of a variable during the program's execution. For example:</p>
+      
+      <ul>
+        <li><code>my_var = 10</code>  <!-- <strong>my_var</strong> is an integer --></li>
+        <li><code>my_var = "Hello"</code> <!-- Now <strong>my_var</strong> is a string --></li>
+      </ul>
+    
+      <p>As seen above, <code>my_var</code> initially holds an integer value, but later in the program, it is assigned a string. This flexibility is one of the advantages of Python's dynamic typing system.</p>
+    
+    </section>
+
+    <section class="main-section" id="Numeric_Expressions">
+  <header>Numeric Expressions</header>
+  
+  <p>In Python, numeric expressions allow you to perform mathematical operations on numbers. Python supports several basic arithmetic operations, including addition, subtraction, multiplication, and division. Additionally, Python also includes advanced operations like exponentiation and modulus operations.</p>
+  
+  <p>Here are the most common arithmetic operators in Python:</p>
+  
+  <ul>
+    <li><strong>Addition (+):</strong> Adds two numbers.</li>
+    <li><strong>Subtraction (-):</strong> Subtracts one number from another.</li>
+    <li><strong>Multiplication (*):</strong> Multiplies two numbers.</li>
+    <li><strong>Division (/):</strong> Divides one number by another, always returning a float.</li>
+    <li><strong>Exponentiation (**):</strong> Raises a number to the power of another number.</li>
+    <li><strong>Modulo (%):</strong> Returns the remainder of a division.</li>
+    <li><strong>Floor Division (//):</strong> Divides and returns the largest integer less than or equal to the result.</li>
+  </ul>
+
+  <p>Examples of numeric expressions in Python:</p>
+  
+  <code>result = 10 + 5 * 2</code>
+  <p>This expression first multiplies <strong>5 * 2</strong> (which equals 10), and then adds 10 to that result, giving a final value of <strong>20</strong>.</p>
+  
+  <code>result = 9 // 4</code>
+  <p>The <strong>floor division</strong> operator (<code>//</code>) divides 9 by 4, giving <strong>2</strong> (ignoring the remainder).</p>
+  
+  <code>result = 10 % 3</code>
+  <p>The <strong>modulus</strong> operator (<code>%</code>) returns the remainder of the division of 10 by 3, which is <strong>1</strong>.</p>
+  
+  <p>Python follows the standard order of operations (PEMDAS) for numeric expressions:</p>
+  
+  <ul>
+    <li><strong>P</strong>arentheses first</li>
+    <li><strong>E</strong>xponentiation</li>
+    <li><strong>M</strong>ultiplication and <strong>D</strong>ivision (from left to right)</li>
+    <li><strong>A</strong>ddition and <strong>S</strong>ubtraction (from left to right)</li>
+  </ul>
+  
+  <p>For example:</p>
+  
+  <code>result = (3 + 5) * 2</code>
+  <p>This expression evaluates as <strong>(3 + 5) * 2</strong>, giving a result of <strong>16</strong> because parentheses have the highest precedence.</p>
+</section>
+
+<section class="main-section" id="Order_of_Evaluation">
+  <header>Order of Evaluation</header>
+  
+  <p>In Python, the order of evaluation determines the sequence in which operators are applied in an expression. Python follows the standard mathematical rules for evaluating expressions, often referred to as the operator precedence.</p>
+  
+  <p>Python evaluates expressions according to the following hierarchy, which is also known as <strong>PEMDAS</strong>:</p>
+  
+  <ul>
+    <li><strong>P</strong>arentheses: Operations inside parentheses are evaluated first.</li>
+    <li><strong>E</strong>xponentiation: The exponentiation operator (<code>**</code>) is evaluated after parentheses.</li>
+    <li><strong>M</strong>ultiplication, <strong>D</strong>ivision, <strong>Floor Division</strong>, and <strong>Modulo</strong>: These operations are performed next, from left to right.</li>
+    <li><strong>A</strong>ddition and <strong>S</strong>ubtraction: Finally, addition and subtraction are evaluated, also from left to right.</li>
+  </ul>
+
+  <p>This hierarchy ensures that expressions are evaluated consistently and according to mathematical standards. For example, multiplication and division are performed before addition and subtraction unless overridden by parentheses.</p>
+  
+  <p>Examples:</p>
+  
+  <code>result = 3 + 5 * 2</code>
+  <p>In this expression, multiplication (<code>*</code>) is evaluated before addition (<code>+</code>). The result is <strong>13</strong> because the multiplication <strong>5 * 2 = 10</strong>, and then <strong>3 + 10 = 13</strong>.</p>
+  
+  <code>result = (3 + 5) * 2</code>
+  <p>In this case, the parentheses force the addition to be evaluated first. So, <strong>(3 + 5) = 8</strong>, and then <strong>8 * 2 = 16</strong>.</p>
+  
+  <p>If you are unsure about how an expression will be evaluated, it is a good practice to use parentheses to make your intent clear, especially in complex expressions.</p>
+</section>
+
+<section class="main-section" id="String_to_Int/Float_Conversion">
+  <header>String to Int/Float Conversion</header>
+  
+  <p>In Python, it is common to need to convert strings that represent numbers into actual numeric data types (integers or floats) so you can perform mathematical operations on them. Python provides two built-in functions for this purpose: <code>int()</code> and <code>float()</code>.</p>
+  
+  <p>The <code>int()</code> function converts a string that represents an integer into an actual integer. If the string does not represent a valid integer, Python will raise a <code>ValueError</code>.</p>
+  
+  <ul>
+    <li><strong>int():</strong> Converts a string representing an integer to an integer type.</li>
+    <li><strong>float():</strong> Converts a string representing a floating-point number to a float type.</li>
+  </ul>
+  
+  <p>For example:</p>
+  <code>num = int("10")</code>
+  <p>This converts the string "10" to the integer <code>10</code>. Similarly:</p>
+  <code>decimal = float("10.5")</code>
+  <p>converts the string "10.5" to the float <code>10.5</code>.</p>
+
+  <p>It's important to remember that when you are trying to convert a string to a number, the string must contain a valid numeric value. If the string contains any characters that are not part of a number, Python will raise an error:</p>
+  <code>int("abc")  <!-- This will raise a ValueError --></code>
+  <p>If you attempt to convert the string "abc", it will result in a <code>ValueError</code> because "abc" cannot be interpreted as a number.</p>
+
+  <p>You can also use <code>int()</code> and <code>float()</code> with numbers written in a different format. For example, the <code>int()</code> function can convert a string with leading or trailing spaces:</p>
+  <code>num = int("  25 ")</code>
+  <p>This will correctly convert the string "  25 " into the integer <code>25</code>.</p>
+
+  <p>When working with floating-point numbers, you can also handle strings that use scientific notation:</p>
+  <code>number = float("1e3")</code>
+  <p>This converts the string "1e3" to the float <code>1000.0</code>, which is the result of the expression <code>1 * 10^3</code>.</p>
+  
+  <p>Remember that these conversions only work with valid numeric strings. If you need to handle user input or external data that may not always be a valid number, it's a good idea to use <code>try-except</code> blocks to handle potential conversion errors gracefully:</p>
+  
+  <code>
+    try:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;num = int("abc")<br>
+    except ValueError:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;print("Invalid input! Not a number.")<br>
+  </code>
+  <p>In this case, if the conversion fails, the <code>except</code> block will catch the error and print a message instead of crashing the program.</p>
+</section>
+
+<section class="main-section" id="Indentation/Deindentation">
+  <header>Indentation/Deindentation</header>
+  
+  <p>Indentation is a crucial aspect of Python syntax. Unlike many programming languages that use braces or keywords to define blocks of code, Python uses indentation to indicate blocks of code. Proper indentation is required for the code to run correctly.</p>
+  
+  <p>Python uses a standard indentation of 4 spaces (not tabs) for each block level. When writing Python code, each block of code that belongs to a control structure (such as <code>if</code>, <code>for</code>, <code>while</code>, etc.) must be indented consistently. Improper indentation will cause a <code>IndentationError</code>.</p>
+  
+  <p>For example:</p>
+  <code>
+    if x > 5:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;print("x is greater than 5")<br>
+  </code>
+  <p>In this example, the statement <code>print("x is greater than 5")</code> is part of the <code>if</code> block and must be indented by 4 spaces. If you remove the indentation or add too many spaces, Python will raise an error:</p>
+  <code>
+    if x > 5:<br>
+    print("x is greater than 5")  <!-- IndentationError: expected an indented block --><br>
+  </code>
+  
+  <p>Deindenting is the process of reducing the level of indentation to exit a block. For example, after the block inside the <code>if</code> statement is finished, you return to the previous indentation level to continue with the rest of the code:</p>
+  <code>
+    if x > 5:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;print("x is greater than 5")<br>
+    print("This is outside the if statement.")<br>
+  </code>
+  
+  <p>In this example, the second <code>print()</code> statement is not indented, so it will execute regardless of the <code>if</code> condition.</p>
+  
+  <p>It's also important to note that Python does not allow mixing tabs and spaces for indentation. This can lead to confusing errors. Always configure your text editor or IDE to insert spaces when you press the tab key. Most editors, including Visual Studio Code, will handle this automatically if you set it to use spaces for indentation.</p>
+  
+  <p>Here's another example of indentation used with loops:</p>
+  <code>
+    for i in range(3):<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;print("Iteration:", i)<br>
+  </code>
+  <p>In this loop, the <code>print()</code> function is indented, indicating that it is part of the <code>for</code> loop. After the loop finishes, the next lines of code should be at the previous indentation level.</p>
+  
+  <p>Lastly, proper deindenting ensures that your program structure remains correct. For instance:</p>
+  <code>
+    def my_function():<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;print("This is inside the function")<br>
+    print("This is outside the function")<br>
+  </code>
+  <p>In this case, the second <code>print()</code> is outside the function and not indented. Indentation should always reflect the logical structure of your program.</p>
+</section>
+
+<section class="main-section" id="Control_Flow">
+  <header>Control Flow</header>
+
+  <p>Control flow refers to the order in which individual statements, instructions, or function calls are executed or evaluated in a program. Python uses control flow statements such as <code>if</code>, <code>elif</code>, <code>else</code>, and loops (<code>for</code>, <code>while</code>) to allow developers to create decision-making and repetitive processes in their programs.</p>
+
+  <p>The most common control flow statements are:</p>
+  <ul>
+    <li><strong>if</strong>: Used to test a condition and execute a block of code if the condition is true.</li>
+    <li><strong>elif</strong>: Used to test multiple conditions. If the <code>if</code> condition is false, it checks the next condition.</li>
+    <li><strong>else</strong>: Executes a block of code if none of the <code>if</code> or <code>elif</code> conditions are true.</li>
+    <li><strong>for</strong>: Used to iterate over a sequence (like a list, tuple, or range).</li>
+    <li><strong>while</strong>: Used to execute a block of code as long as a specified condition is true.</li>
+  </ul>
+
+  <h3>If Statements</h3>
+  <p>The <code>if</code> statement tests a condition and executes the code block if the condition is true.</p>
+  <code>
+    if x > 5:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;print("x is greater than 5")
+  </code>
+  <p>If the condition <code>x > 5</code> is true, Python will execute the code inside the block, which is the <code>print()</code> statement. If the condition is false, Python will skip the block.</p>
+
+  <h3>Elif and Else</h3>
+  <p>The <code>elif</code> statement allows you to test multiple conditions. If the first condition in the <code>if</code> block is false, Python moves on to the <code>elif</code> conditions. If none of the conditions are true, the <code>else</code> block will be executed.</p>
+  <code>
+    if x > 10:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;print("x is greater than 10")<br>
+    elif x == 5:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;print("x is 5")<br>
+    else:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;print("x is less than or equal to 10 but not 5")
+  </code>
+  <p>In this example, if <code>x > 10</code> is true, the first block will run. If not, Python will check if <code>x == 5</code>. If that condition is true, it will print "x is 5". Otherwise, it will print "x is less than or equal to 10 but not 5".</p>
+
+  <h3>For Loops</h3>
+  <p>A <code>for</code> loop is used to iterate over a sequence of elements, such as a list, string, or range of numbers. It repeatedly executes a block of code for each item in the sequence.</p>
+  <code>
+    for i in range(3):<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;print(i)
+  </code>
+  <p>This loop will print the numbers 0, 1, and 2. The <code>range(3)</code> function generates the sequence of numbers from 0 to 2.</p>
+
+  <h3>While Loops</h3>
+  <p>A <code>while</code> loop continues to execute a block of code as long as the specified condition is true. If the condition becomes false, the loop stops.</p>
+  <code>
+    while x < 5:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;print(x)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;x += 1
+  </code>
+  <p>This <code>while</code> loop will print the value of <code>x</code> starting from its initial value and increment it by 1 each time, as long as <code>x < 5</code>. Once <code>x</code> reaches 5, the loop will stop.</p>
+
+  <h3>Break and Continue Statements</h3>
+  <p>In addition to <code>if</code>, <code>for</code>, and <code>while</code> loops, Python has <code>break</code> and <code>continue</code> statements that control loop execution:</p>
+  <ul>
+    <li><strong>break:</strong> Exits the loop entirely, regardless of whether the condition is still true.</li>
+    <li><strong>continue:</strong> Skips the current iteration of the loop and moves to the next one.</li>
+  </ul>
+  <p>For example:</p>
+  <code>
+    for i in range(5):<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;if i == 3:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;print(i)
+  </code>
+  <p>This loop will print 0, 1, and 2, then exit the loop when <code>i == 3</code>.</p>
+
+  <code>
+    for i in range(5):<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;if i == 3:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;print(i)
+  </code>
+  <p>This loop will print 0, 1, 2, and 4, skipping the number 3 due to the <code>continue</code> statement.</p>
+
+  <h3>Nested If Statements</h3>
+  <p>You can also nest <code>if</code> statements inside other <code>if</code> statements. This allows for more complex decision-making structures:</p>
+  <code>
+    if x > 5:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;if x == 10:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("x is exactly 10")<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("x is greater than 5 but not 10")
+  </code>
+  <p>In this example, if <code>x > 5</code> is true, Python will check if <code>x == 10</code>. If that is true, it will print "x is exactly 10", otherwise, it will print "x is greater than 5 but not 10".</p>
+</section>
+<section class="main-section" id="Reference">
+  <header>Reference</header>
+  <p>For more in-depth explanations and examples, you can refer to the <a class="nav-link" href="https://www.py4e.com" target="_blank">Python for Everybody</a> website, created by Dr. Charles Severance. Dr. Chuck is a renowned professor and educator known for making programming accessible to beginners. His resources include free online textbooks and video lectures that cover a wide range of topics, including control flow in Python.</p>
+</section>
+  </main>
+</body>
+</html>
